@@ -1,0 +1,16 @@
+{
+  "name": "samplenodejs-helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Vibhor",
+  "license": "",
+  "dependencies": {
+    "moment": "2.19.3",
+    "qs": "^6.9.3"
+  }
+}
