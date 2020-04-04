@@ -14,7 +14,7 @@ spec:
       nodeSelector:
         beta.kubernetes.io/os: linux
       containers:
-        - name: sample-app
+        - name: sample-nodejsapp
           image: clarkkent/samplenodejswebapp:latest
           env:
             - name: APP_NAME
