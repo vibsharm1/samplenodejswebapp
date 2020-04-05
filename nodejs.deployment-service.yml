@@ -1,24 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: sample-nodejsapp
+  name: sample-nodeapp
   labels:
-    app: sample-nodejsapp
+    app: sample-nodeapp
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: sample-nodejsapp
+        app: sample-nodeapp
     spec:
       nodeSelector:
         "kubernetes.io/os": linux
       containers:
-        - name: sample-nodejsapp
-          image: clarkkent/samplenodejswebapp:latest
+        - name: sample-nodeapp
+          image: clarkkent/samplenodejswebapp:v1
           env:
             - name: APP_NAME
-              value: "sample-nodejsapp"
+              value: "sample-nodeapp"
             - name: TEST_ME
               value: "Hello, world!"
             - name: K8_NODE
@@ -38,19 +38,19 @@ spec:
                 fieldRef:
                   fieldPath: status.podIP
             - name: PORT
-              value: "3333"
+              value: "4444"
           ports:
-            - containerPort: 3333
-              name: sample-nodejsapp
+            - containerPort: 4444
+              name: sample-nodeapp
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-nodejsapp
+  name: sample-nodeapp
 spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: sample-nodejsapp
+      targetPort: sample-nodeapp
   selector:
-    app: sample-nodejsapp
+    app: sample-nodeapp
