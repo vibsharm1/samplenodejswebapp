@@ -15,7 +15,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: sample-nodeapp
-          image: clarkkent/samplenodejswebapp:v1
+          image: clarkkent/samplenodejswebapp:v2
           env:
             - name: APP_NAME
               value: "sample-nodeapp"
